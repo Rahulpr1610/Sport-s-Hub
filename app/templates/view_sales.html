@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,thead,th,tbody,td,tr{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    {% if a %}
+    <h2>View sales</h2>
+    <table>
+        <thead>
+            <th>username</th>
+            <th>place</th>
+            <th>phone</th>
+            <th>email</th>
+        </thead>
+        <tbody>
+            {% for i in a %}
+            <tr>
+                <td>{{i.username}}</td>
+                <td>{{i.place}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.email}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>

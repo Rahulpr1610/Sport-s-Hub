@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function myFunction() {
+        var x=document.forms["myForm"]["qnty"].value;
+        var y=document.forms["myForm"]["p"].value;
+        var num_x=parseInt(x);
+        var num_y=parseInt(y);
+        var a=num_x*num_y;
+        
+       
+          alert("Total Amount:"+a);
+        }
+        </script>
+         
+
+    <form method="post" name="myForm" onsubmit="myFunction()">
+        {% csrf_token %}
+        Quantity:<input type="number" name="qnty">
+        <input type="hidden" name="p" value="{{p}}">
+        <input type="submit" value="Ok">
+    </form>
+</body>
+</html>

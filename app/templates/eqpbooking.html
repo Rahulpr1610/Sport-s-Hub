@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Equipment booking</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>equipment_id</label>
+        <input type="text" name="eqp_id"><br><br>
+        <label>Equipment_name</label>
+        <input type="text" name="eqp_name"><br><br>
+        <label>Quantity</label>
+        <input type="text" name="quantity"><br><br>
+        <label>Total</label>
+        <input type="text" name="total"><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

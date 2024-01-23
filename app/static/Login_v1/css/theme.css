@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*Login*/
+.login {
+    background-image: url('https://example.com/path/to/image.jpg');
+}
+
+.facebook {
+    font-weight: bold;
+    font-size: 3.5em;
+    font-family: "Poppins", sans-serif;
+    color: rgb(238, 238, 238) !important;
+}
+
+.text-description {
+    font-weight: normal;
+    font-size: 1.4em;
+    font-family: "Poppins", sans-serif;
+}
+
+.bg-gray {
+    background-color: hsl(148, 80%, 28%);
+}
+
+.btn-primary {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+.btn-success {
+    background-color: #a31779 !important;
+}
+
+input::placeholder {
+    color: #eb0909 !important;
+    font-size: 0.8em;
+
+}
+
+.btn-h-primary:hover {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+.btn-h-success:hover {
+    background-color: hwb(0 0% 100%) !important;
+}

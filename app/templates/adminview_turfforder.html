@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h2>Turff Order</h2><br>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.jqueryui.min.css">
+    <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"> -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <script defe src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- <script defe src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script> -->
+    <!-- <script defe src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/dataTables.jqueryui.min.js"></script> -->
+    <!-- <script defer src="https://cdn.tailwindcss.com/"></script> -->
+    <script defer src="/static/assets/adminview_turfforder.js"></script>
+
+    <title>Admin Turff Order</title>
+</head>
+<body>
+    <style>
+        h2{
+             /* border:1px solid black; */
+             border-collapse: collapse;
+             margin-left: auto;
+             text-align: center;
+             margin-top: 50px;
+         }
+         /* table{
+            width:90%;
+            height:auto;
+            margin-bottom: 60px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 50px;
+            
+         } */
+     </style>
+     <!-- <div>
+        Toggle column: <a class="toggle-vis" data-column="0">Name</a> - <a class="toggle-vis" data-column="1">Position</a> - <a class="toggle-vis" data-column="2">Office</a> - <a class="toggle-vis" data-column="3">Age</a> - <a class="toggle-vis" data-column="4">Start date</a> - <a class="toggle-vis" data-column="5">Salary</a>
+    </div> -->
+    {% if b %}
+    <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <th>User_id</th>
+            <th>Truff_id</th>
+            <th>Truff_name</th>
+            <th>Booking_amount</th>
+            <th>Status</th>
+            <!-- <th>payment</th> -->
+        </thead>
+        <tbody>
+            {% for i in b %}
+            <tr>
+                <td>{{i.user_id}}</td>
+                <td>{{i.truff_id}}</td>
+                <td>{{i.truff_name}}</td>
+                <td>{{i.booking_amount}}</td>
+                <td>{{i.status}}</td>
+                {% if i.status == "Approved" %}
+                <!-- <td><a href="/turff_payment/{{i.id}}/{{i.booking_amount}}">makepayment</a></td> -->
+
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %} 
+</body>
+<br><br><a href="/user_home/"><button>Back</button></a>
+</html>

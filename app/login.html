@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/Login_v1/css/theme.css">
+    <link rel="stylesheet" href="/static/Login_v1//css/bootstrap.min.css">
+    <script src="/static/Login_v1/https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <script type="text/javascript"> 
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        }
+    </script>
+    <!-- <link rel="shortcut icon" href="/static/Login_v1/img/facebook-logo-2019.ico" type="image/x-icon"> -->
+    <title>sign up</title>
+</head>
+
+<body class="bg-gray">
+    <div class="crossfit-slide-bg" style="background-image: url(/static/Login_v1/img/pexels-rfstudio-3886066.jpg);"></div>
+
+    <div class="p-5">
+
+        <div class="container">
+
+            <div class="row pt-5">
+
+                <div class="col-xl-7 col-lg-6 col-md-12">
+
+                    <div class="text-center pb-3 ">
+                        <h1 class="text-primary facebook"></h1>
+                        <h1 class="text-description"></h1>
+                    </div>
+
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-12">
+
+                    <div class="card shadow border-0 card-body ">
+
+                        <form method="post">
+                            {% csrf_token %}
+
+                            <div class="mb-3">
+
+                                <input type="text" class="form-control form-control-lg"
+                                    placeholder="Email or phone number" required name="uname">
+                            </div>
+
+                            <div class="mb-3">
+
+                                <input type="password" class="form-control form-control-lg holder" placeholder="Password"
+                                    required name="pswd">
+                            </div>
+
+                            <div class="d-grid gap-2 col-12 mx-auto ">
+                                <button class="btn btn-primary text-light fw-bold btn-lg border-0 btn-h-primary"
+                                    type="submit">Log
+                                    In</button>
+
+                                <div class="text-center">
+                                    <a href="#" class="text-decoration-none">Forgot password?</a>
+                                </div>
+
+                                <hr>
+
+                                <div class="text-center pb-2">
+                                    <button class="btn btn-success text-light fw-bold btn-lg border-0 btn-h-success"
+                                        type="submit">Create
+                                        new
+                                        account</button>
+                                </div>
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="text-center pt-3">
+                    Create a Page or a celebrity, brand or business
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+    <script src="/static/Login_v1//js/theme.js"></script>
+    <script src="/static/Login_v1//js/bootstrap.min.js"></script>
+</body>
+
+</html>

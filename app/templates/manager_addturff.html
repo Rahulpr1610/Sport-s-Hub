@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Manager_addTruff</title>
+    <script type="text/javascript"> 
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        }
+    </script>
+</head>
+<body>
+    <h2>Truff Adding</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Truff_name</label>
+        <input type="text" name="tname"><br><br>
+        <label>Place</label>
+        <input type="text" name="place"><br><br>
+        <label>Email</label>
+        <input type="text" name="email"><br><br>
+        <label>Phone</label>
+        <input type="text" name="phone"><br><br>
+        <label>Price</label>
+        <input type="text" name="price"><br><br>
+        <label>Photo</label>
+        <input type="file" name="photo"><br><br>
+        <input type="submit" value="submit"><br>
+    </form>
+</body>
+</html>

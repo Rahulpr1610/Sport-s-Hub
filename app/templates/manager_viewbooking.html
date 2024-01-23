@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/css/uikit.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.uikit.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script defe src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/dataTables.uikit.min.js"></script>
+    <script defer src="stylemanager.js"></script>
+
+    <title>Manager viewbooking</title>
+    <script type="text/javascript"> 
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        }
+    </script>
+    <style>
+        h2{
+             /* border:1px solid black; */
+             border-collapse: collapse;
+             margin-left: auto;
+             text-align: center;
+             margin-top: 50px;
+         }
+     </style>
+</head>
+<body>
+    <h2>View Booking</h2><br>
+    <!-- <style>
+        table,thead,th,tbody,td,tr{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style> -->
+    {% if f %}
+    <table id="example" class="uk-table uk-table-hover uk-table-striped" style="width:100%">
+        <thead>
+            <th>User_id</th>
+            <th>Truff_id</th>
+            <th>Truff_name</th>
+            <th>Booking_amount</th>
+            <th>Status</th>
+            <th>Request</th>
+        </thead>
+        <tbody>
+            {% for i in f %}
+            <tr>
+                <td>{{i.user_id}}</td>
+                <td>{{i.truff_id}}</td>
+                <td>{{i.truff_name}}</td>
+                <td>{{i.booking_amount}}</td>
+                <td>{{i.status}}</td>
+                {% if i.status == 'pending' %}
+                <td><a href="/approve/{{i.id}}">Approve   </a></td>
+                <td><a href="/reject/{{i.id}}">Reject   </a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+<a href="/manager_home/"><button>Back</button></a><br><br><br><br>
+</html>

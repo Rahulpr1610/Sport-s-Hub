@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script defe src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+    <script defer src="/static/style.js"></script>
+
+    <title>Sales eqp</title>
+    <script type="text/javascript"> 
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        }
+    </script>
+  <style>
+    h1{
+         /* border:1px solid black; */
+         border-collapse: collapse;
+         margin-left: auto;
+         text-align: center;
+         margin-top: 50px;
+     }
+ </style>
+</head>
+<body>
+    {% if b %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>sales_id</label>
+        <input type="text" name="sid" value="{{b.sales_id}}"><br><br>
+        <label>Equipment_name</label>
+        <input type="text" name="eqname" value="{{b.equipment_name}}"><br><br>
+        <label>quantity</label>
+        <input type="text" name="qnty" value="{{b.quantity}}"><br><br>
+        <label>price</label>
+        <input type="text" name="price" value="{{b.price}}"><br><br>
+        <img src="{{b.photo.url}}" alt="img" height="50px" width="50px">
+        <input type="file" name="photo"value="{{a.photo}}"><br><br> 
+        <input type="submit" value="Register">
+    </form>
+    {% endif %}
+    {% if k %}
+    <h1>Products</h1>
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <th>Sales_id</th>
+            <th>equipment_name</th>
+            <th>quantity</th>
+            <th>Photo</th>
+            <th>price</th>
+            <th>delete</th>
+            <th>Update</th>
+            <th>Booking</th>
+        </thead>
+        <tbody>
+            {% for i in k %}
+            <tr>
+                <td>{{i.sales_id}}</td>
+                <td>{{i.equipment_name}}</td>
+                <td>{{i.quantity}}</td>
+                <td><img src="{{i.photo.url}}" alt="img" height="70px" width="70px"> </td>
+                <td>{{i.price}}</td>
+                <td><a href="/delete/{{i.id}}">delete</a></td>
+                <td><a href="/update/{{i.id}}">update</a></td>
+                <td><a href="/sales_viewbooking/{{i.id}}">View Booking</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+<br><br><a href="/sales_home/">Back</a>
+</html>

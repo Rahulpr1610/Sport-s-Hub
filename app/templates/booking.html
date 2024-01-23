@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+</head>
+<body>
+    <style>
+        table,thead,th,tbody,td,tr{
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    {% if d %}
+    <h2>Booking</h2>
+        <table>
+            <thead>
+                <th>Truff_name</th>
+                <th>Price</th>
+                <th>Photo</th>
+                <th>Payment</th>
+            </thead>
+            <tbody>
+                {% for i in d %}
+                <tr>
+                    <td>{{i.truff_name}}</th>
+                    <td>{{i.price}}</td>
+                    <td><img src="{{i.photo.url}}" alt="img" height="70px" width="70px"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+</body>
+</html>

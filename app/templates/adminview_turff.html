@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script defe src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+    <script defer src="/static/style.js"></script>
+
+    <script type="text/javascript"> 
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        }
+    </script>
+
+    <title>Document</title>
+    <!-- <link href="/static/userview_turff.css" rel="stylesheet"> -->
+</head>
+<body>
+    <style>
+        h2{
+            /* border:1px solid black; */
+            border-collapse: collapse;
+            margin-left: auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+        td img{
+            width: 100px;
+            height: 60px;
+            
+        }
+    </style>
+     {% if d %}
+     <h2>Available Turff</h2><br>
+     <table id="example" class="table table-striped table-bordered" style="width:100%">
+         <thead>
+             <th>Truff_name</th>
+             <th>Place</th>
+             <th>Email</th>
+             <th>Phone</th>
+             <th>Price</th>
+             <th>Photo</th>
+             <!-- <th>Payment</th> -->
+         </thead>
+         <tbody>
+             {% for i in d %}
+             <tr>
+                 <td>{{i.truff_name}}</td>
+                 <td>{{i.place}}</td>
+                 <td>{{i.email}}</td>
+                 <td>{{i.phone}}</td>
+                 <td>{{i.price}}</td>
+                 <td><img src="{{i.photo.url}}" alt="img" height="70px" width="70px"></td>
+                 <!-- <td><bu<a href="/booking/{{i.id}}/{{i.truff_name}}/{{i.price}}">Book Turff</a></td> -->
+                 <!-- <td><a href="/booking/{{i.id}}/{{i.truff_name}}/{{i.price}}"><button class="buy">Book now</button> </a></td> -->
+             </tr>
+             {% endfor %}
+         </tbody>
+     </table>
+     {% endif %}
+</body>
+<a href="/user_home/"><button>Back</button></a>
+</html>

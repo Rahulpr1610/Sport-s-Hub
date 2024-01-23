@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script defe src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script defe src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+    <script defer src="script.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add Equipment</h2><br>
+    <form method="post"enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label>Equipment_name</label>
+        <input type="text" name="eqname"><br><br>
+        <label>Quantity</label>
+        <input type="number" name="qnty"><br><br>
+        <label>Price</label>
+        <input type="text" name="price"><br><br>
+        <label>Photo</label>
+        <input type="file" name="photo"><br><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+<br><br><a href="/sales_home/"><button>Back</button></a>
+</html>
